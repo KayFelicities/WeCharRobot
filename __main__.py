@@ -35,7 +35,7 @@ def text_reply(msg):
             friend_list = itchat.get_friends(update=True)[1:]
             for friend in friend_list:
                 if (friend.get('NickName', '') and friend.get('NickName', '') != '朋友推荐消息'):
-                    itchat.send(send_text % (get_right_str(friend['DisplayName']) or get_right_str(friend['NickName']), msg['Content'][4:]), friend['UserName'])
+                    itchat.send(send_text % (get_right_str(friend['DisplayName']) or get_right_str(friend['NickName']), msg['Content'][3:]), friend['UserName'])
                 time.sleep(uniform(1, 2))
             itchat.send_msg(msg='done', toUserName=msg['FromUserName'])
         else:
